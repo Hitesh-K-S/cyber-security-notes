@@ -24,6 +24,44 @@ const questionPreview = document.querySelector("#question-preview");
 renderChrome();
 renderNotes();
 
+initTabs();
+
+function initTabs() {
+  const tabBar = document.querySelector("#tab-bar");
+  if (!tabBar) return;
+  tabBar.addEventListener("click", (e) => {
+    const tab = e.target.closest(".tab");
+    if (!tab) return;
+    document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
+    document.querySelectorAll(".tab-content").forEach((tc) => tc.classList.remove("active"));
+    const target = document.querySelector("#tab-" + tab.dataset.tab);
+    if (target) target.classList.add("active");
+
+    if (tab.dataset.tab === "questions") {
+      renderQuestionPapers();
+    }
+  });
+}
+
+function renderQuestionPapers() {
+  const root = document.querySelector("#question-papers-root");
+  if (!root || root.dataset.rendered) return;
+  root.dataset.rendered = "true";
+
+  const papers = [
+    { label: "Question Paper 1", text: data.questionPaper },
+    { label: "Question Paper 2", text: data.questionPaper2 },
+  ];
+
+  root.innerHTML = papers.map((p, i) => `
+    <details class="qp-card" ${i === 0 ? "open" : ""}>
+      <summary><span class="qp-label">${escapeHtml(p.label)}</span></summary>
+      <pre class="qp-text">${escapeHtml(p.text)}</pre>
+    </details>
+  `).join("");
+}
+
 if (typeof mermaid !== 'undefined') {
   mermaid.initialize({ startOnLoad: false, theme: 'neutral', maxTextSize: 60000 });
   setTimeout(() => {

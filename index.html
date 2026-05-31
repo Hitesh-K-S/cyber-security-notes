@@ -20,27 +20,37 @@
 
     <nav class="unit-nav" id="unit-nav" aria-label="Unit navigation"></nav>
 
+    <nav class="tab-bar" id="tab-bar">
+      <button class="tab active" data-tab="notes">Study Notes</button>
+      <button class="tab" data-tab="questions">Question Papers</button>
+    </nav>
+
     <main class="page-shell">
-      <section class="overview-grid" aria-label="Study overview">
-        <article class="overview-card accent-a">
-          <p class="card-kicker">Coverage</p>
-          <h2>All syllabus units</h2>
-          <p id="notes-summary"></p>
-        </article>
-        <article class="overview-card accent-b">
-          <p class="card-kicker">Syllabus</p>
-          <h2>Unit-wise topics</h2>
-          <pre id="syllabus-preview" class="plain-text-block"></pre>
-        </article>
-        <article class="overview-card accent-c">
-          <p class="card-kicker">Question Paper</p>
-          <h2>Previous questions</h2>
-          <pre id="question-preview" class="plain-text-block"></pre>
-        </article>
-      </section>
+      <div class="tab-content active" id="tab-notes">
+        <section class="overview-grid" aria-label="Study overview">
+          <article class="overview-card accent-a">
+            <p class="card-kicker">Coverage</p>
+            <h2>All syllabus units</h2>
+            <p id="notes-summary"></p>
+          </article>
+          <article class="overview-card accent-b">
+            <p class="card-kicker">Syllabus</p>
+            <h2>Unit-wise topics</h2>
+            <pre id="syllabus-preview" class="plain-text-block"></pre>
+          </article>
+          <article class="overview-card accent-c">
+            <p class="card-kicker">Question Paper</p>
+            <h2>Previous questions</h2>
+            <pre id="question-preview" class="plain-text-block"></pre>
+          </article>
+        </section>
 
-      <section class="notes-root" id="notes-root" aria-label="Unit-wise notes"></section>
+        <section class="notes-root" id="notes-root" aria-label="Unit-wise notes"></section>
+      </div>
 
+      <div class="tab-content" id="tab-questions">
+        <section class="question-papers-root" id="question-papers-root"></section>
+      </div>
 
     </main>
 
