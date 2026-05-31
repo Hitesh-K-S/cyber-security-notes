@@ -24,6 +24,18 @@ const questionPreview = document.querySelector("#question-preview");
 renderChrome();
 renderNotes();
 
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({ startOnLoad: false, theme: 'neutral', maxTextSize: 60000 });
+  setTimeout(() => {
+    document.querySelectorAll('.mermaid').forEach(el => {
+      if (!el.dataset.processed) {
+        mermaid.run({ nodes: [el] });
+        el.dataset.processed = 'true';
+      }
+    });
+  }, 300);
+}
+
 function renderChrome() {
   heroStats.innerHTML = [
     buildStat(data.notes.length, "Total note sections"),

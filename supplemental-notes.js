@@ -364,6 +364,7 @@ window.__SUPPLEMENTAL_NOTES__ = [
 
       <h2>PDCA Model (Plan-Do-Check-Act)</h2>
       <p>The PDCA model is a continuous improvement cycle widely used in information security management systems (ISMS), especially in the ISO 27001 framework.</p>
+      <pre class=\"mermaid\">\ngraph TD\n    P[\"PLAN\nEstablish security\nobjectives & policies\"] --> D[\"DO\nImplement security\ncontrols & processes\"]\n    D --> C[\"CHECK\nMonitor & measure\nsecurity performance\"]\n    C --> A[\"ACT\nTake corrective &\npreventive actions\"]\n    A -->|\"Continuous\nImprovement\"| P\n</pre>
       <table>
         <thead><tr><th>Stage</th><th>Meaning</th><th>Activities</th></tr></thead>
         <tbody>
