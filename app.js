@@ -49,17 +49,95 @@ function renderQuestionPapers() {
   if (!root || root.dataset.rendered) return;
   root.dataset.rendered = "true";
 
+  const notesByOrder = {};
+  for (const note of data.notes) {
+    notesByOrder[note.order] = note;
+  }
+
+  const qaMap = data.questionAnswers || [];
   const papers = [
-    { label: "Question Paper 1", text: data.questionPaper },
-    { label: "Question Paper 2", text: data.questionPaper2 },
+    { label: "Question Paper 1", text: data.questionPaper, qaIndex: 0 },
+    { label: "Question Paper 2", text: data.questionPaper2, qaIndex: 1 },
   ];
 
-  root.innerHTML = papers.map((p, i) => `
-    <details class="qp-card" ${i === 0 ? "open" : ""}>
-      <summary><span class="qp-label">${escapeHtml(p.label)}</span></summary>
-      <pre class="qp-text">${escapeHtml(p.text)}</pre>
-    </details>
-  `).join("");
+  root.innerHTML = papers.map((p, i) => {
+    const questions = parseQuestionPaper(p.text, qaMap[p.qaIndex] || [], notesByOrder);
+    return `
+      <details class="qp-card" ${i === 0 ? "open" : ""}>
+        <summary><span class="qp-label">${escapeHtml(p.label)}</span></summary>
+        <div class="qp-body">${questions}</div>
+      </details>
+    `;
+  }).join("");
+
+  if (typeof mermaid !== 'undefined') {
+    setTimeout(() => {
+      document.querySelectorAll('#question-papers-root .mermaid:not([data-processed])').forEach(el => {
+        mermaid.run({ nodes: [el] });
+        el.dataset.processed = 'true';
+      });
+    }, 100);
+  }
+}
+
+function parseQuestionPaper(text, answerMap, notesByOrder) {
+  const answerByQuestion = {};
+  for (const q of answerMap) {
+    answerByQuestion[q.id] = q.orders;
+  }
+
+  const parts = text.split(/\n(?=Q\d\))/);
+  return parts.map(block => {
+    block = block.trim();
+    if (!block) return '';
+
+    const qMatch = block.match(/^Q(\d)\)/);
+    if (!qMatch) return '<div class="qp-blob">' + escapeHtml(block) + '</div>';
+    const qNum = qMatch[1];
+
+    const newlineIdx = block.indexOf('\n');
+    const headerLine = block.substring(0, newlineIdx);
+    const rest = block.substring(newlineIdx + 1).trim();
+
+    const subParts = rest.split(/\n(?=[a-d]\))/);
+    let prevWasOr = false;
+    const subHtml = subParts.map(sub => {
+      sub = sub.trim();
+      if (!sub) return '';
+
+      if (/^OR$/i.test(sub)) {
+        prevWasOr = true;
+        return '';
+      }
+
+      const letterMatch = sub.match(/^([a-d])\)\s*\n(.*)/s);
+      if (!letterMatch) {
+        return '<div class="qp-blob">' + escapeHtml(sub) + '</div>';
+      }
+      const letter = letterMatch[1];
+      const questionText = letterMatch[2].trim();
+      const qId = 'Q' + qNum + letter;
+
+      const orders = answerByQuestion[qId] || [];
+      const notes = orders.map(o => notesByOrder[o]).filter(Boolean);
+
+      return (prevWasOr ? '<div class="qp-or">OR</div>' : '') +
+        '<div class="qp-question" data-q="' + qId + '">' +
+          '<div class="qp-q-header">' + escapeHtml(qId) + '</div>' +
+          '<div class="qp-q-text">' + escapeHtml(questionText) + '</div>' +
+          (notes.length > 0
+            ? '<details class="qp-answer"><summary>Show Answer</summary><div class="qp-answer-content">' +
+              notes.map(n => n.html).join('<hr class="qp-answer-sep">') +
+              '</div></details>'
+            : '<div class="qp-no-answer">Answer not yet written</div>') +
+        '</div>';
+    }).join('');
+
+    return '<div class="qp-section">' +
+      '<div class="qp-section-header">' + escapeHtml(headerLine) + '</div>' +
+      subHtml +
+    '</div>';
+  }).join('');
 }
 
 if (typeof mermaid !== 'undefined') {

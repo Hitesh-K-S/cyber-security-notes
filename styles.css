@@ -463,14 +463,132 @@ h3 {
   color: var(--brand-dark);
 }
 
-.qp-text {
-  margin: 0;
-  padding: 20px;
+.qp-body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.qp-section {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.qp-section-header {
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 0.93rem;
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--line);
+  color: var(--brand-dark);
+}
+
+.qp-question {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.qp-question:last-child {
+  border-bottom: 0;
+}
+
+.qp-q-header {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--brand);
+  margin-bottom: 6px;
+}
+
+.qp-q-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink);
   white-space: pre-wrap;
-  font-family: "Aptos", "Trebuchet MS", Verdana, sans-serif;
+}
+
+.qp-or {
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px dashed var(--line);
+  margin: -1px 0;
+}
+
+.qp-answer {
+  margin-top: 10px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.qp-answer summary {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: var(--surface-soft);
+  color: var(--brand-dark);
+  border-bottom: 1px solid var(--line);
+}
+
+.qp-answer summary::-webkit-details-marker {
+  display: none;
+}
+
+.qp-answer summary::before {
+  content: "▶";
+  margin-right: 8px;
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.qp-answer[open] summary::before {
+  content: "▼";
+}
+
+.qp-answer-content {
+  padding: 14px;
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--ink);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.qp-answer-content .mermaid svg {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.qp-answer-sep {
+  margin: 14px 0;
+  border: 0;
+  border-top: 1px dashed var(--line);
+}
+
+.qp-no-answer {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.qp-blob {
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink);
+  white-space: pre-wrap;
+  border-bottom: 1px solid var(--line);
 }
 
 @media (max-width: 900px) {
