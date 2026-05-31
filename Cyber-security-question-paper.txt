@@ -1,0 +1,102 @@
+Q1) Attempt Any One Pair
+a)
+
+“Cyberspace and cybercrime are two sides of a coin”. Explain. [5]
+
+b)
+
+Discuss cyber bullying and cyberstalking with suitable examples. [5]
+
+OR
+
+c)
+
+What is computer security? How to secure your computer? Explain. [5]
+
+d)
+
+Differentiate between white, black and grey hat hacking. [5]
+
+Q2) Attempt Any One Pair
+a)
+
+Verizon Ltd. is a firm providing customer and internet banking facilities. Its main customers are some of the biggest banks of USA. Its employees, who have access to all the financial accounts, personal data and ATM card information of approximate 10 million clients of these banks. You have been deputed as Security Administrator and have been allocated the duty to examine the possible security breaches which might occur.
+
+What are the different types of threats and vulnerabilities you might identify? [5]
+
+b)
+
+List out various web attacks. [5]
+
+OR
+
+c)
+
+The Starbuz corporation, is a global player in the e-commerce industry with several offices across the world. The breach resulted in a data compromise that impacted customer trust, led to financial losses, and highlighted several critical flaws in their network security.
+
+As an information security expert discover various network vulnerabilities. [5]
+
+d)
+
+Demonstrate the use of botnets and distributed denial-of-service attacks in cyber-attacks. [5]
+
+Q3) Attempt Any One Pair
+a)
+
+John Doe, a 32-year-old software engineer, became the victim of a sophisticated identity theft scheme that took place over several months. John had always been cautious about his personal information, taking care not to share it online. However, despite his efforts, his personal and financial information was stolen and used by criminals to commit various fraudulent activities.
+
+Demonstrate the modus operandi behind this targeted attack. [5]
+
+b)
+
+Illustrate medical identity theft and synthetic identity theft with suitable example. [5]
+
+OR
+
+c)
+
+In recent years, the rise of sophisticated cyber-attacks targeting the financial industry has highlighted the critical importance of robust cybersecurity measures. Financial fraud, often carried out through cyber-enabled attacks, is a growing concern for financial institutions, businesses, and consumers.
+
+Write in detail the impact of such a kind of fraud. [5]
+
+d)
+
+Demonstrate following techniques of identity theft: [5]
+
+Skimming and Cloning
+Phishing and Social Engineering
+Q4) Attempt Any One Pair
+a)
+
+Demonstrate various legal issues in software piracy. [5]
+
+b)
+
+Demonstrate features and objectives of IT Act 2000. [5]
+
+OR
+
+c)
+
+Highlight upon the challenges and ethical considerations in cyber security. [5]
+
+d)
+
+Demonstrate number of offences and penalties under IT Act 2000. [5]
+
+Q5) Write Short Notes (Any Two) [2 × 5 = 10]
+a)
+
+BS7799
+
+b)
+
+NGS Auditor
+
+c)
+
+Cyber Security vs Information Security
+
+d)
+
+ISMS

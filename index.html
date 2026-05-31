@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Security Study Hub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Cyber Security Notes</p>
+        <h1>Complete unit-wise study notes</h1>
+        <p class="hero-text">
+           Complete exam-ready notes covering every syllabus topic across all 5 units, including detailed answers from the question paper and enhanced notes on missing topics.
+        </p>
+      </div>
+      <div class="hero-stats" id="hero-stats"></div>
+    </header>
+
+    <nav class="unit-nav" id="unit-nav" aria-label="Unit navigation"></nav>
+
+    <main class="page-shell">
+      <section class="overview-grid" aria-label="Study overview">
+        <article class="overview-card accent-a">
+          <p class="card-kicker">Coverage</p>
+          <h2>All syllabus units</h2>
+          <p id="notes-summary"></p>
+        </article>
+        <article class="overview-card accent-b">
+          <p class="card-kicker">Syllabus</p>
+          <h2>Unit-wise topics</h2>
+          <pre id="syllabus-preview" class="plain-text-block"></pre>
+        </article>
+        <article class="overview-card accent-c">
+          <p class="card-kicker">Question Paper</p>
+          <h2>Previous questions</h2>
+          <pre id="question-preview" class="plain-text-block"></pre>
+        </article>
+      </section>
+
+      <section class="notes-root" id="notes-root" aria-label="Unit-wise notes"></section>
+
+
+    </main>
+
+    <script src="./study-data.js"></script>
+    <script src="./supplemental-notes.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

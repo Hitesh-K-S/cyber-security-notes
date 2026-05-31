@@ -1,0 +1,101 @@
+### Unit 1: Introduction to Cyber Security (20%, 7 Sessions)
+
+1. Introduction of Cyber Crime and Cyber-Space
+2. History and evolution of cyber crime
+3. Traditional Problems Associated with Computer Crime
+4. Computer Security
+5. Threats, Harm, Vulnerabilities
+6. Cyber Security fundamentals
+7. Types of Cybercrime
+8. Hacking & Ethical Hacking
+9. Cyber bullying and Cyber stalking
+10. Impact of Cyber bullying and cyber stalking
+
+
+### Unit 2: Cyber Crime Techniques (20%, 10 Sessions)
+
+1. Digital footprint
+2. Social media and Social engineering tactics
+3. Exploiting vulnerabilities in software and hardware
+4. Use of botnets and Distributed Denial of Service (DDoS) attacks
+5. Advanced Persistent Threats (APTs)
+6. Web attacks:
+    - Browser attacks
+    - Web attacks targeting users
+7. Obtaining user or website data, Email attacks
+8. Network vulnerabilities:
+    - Vulnerability scanning using tools such as Nmap
+9. Impact of emerging technologies like AI and IoT on cyber crime
+10. The Dark Web and cyber crime
+11. Case study on importance of cyber hygiene
+    
+    
+    
+    ## Unit 3: Identity Theft and Financial Fraud (20%, 10 Sessions)
+
+#### 3.1 Identity Theft
+
+- Personal information theft
+- Medical identity theft
+- Criminal identity theft
+- Synthetic identity theft
+
+#### 3.2 Techniques of Identity Theft
+
+- Phishing and social engineering
+- Malware and keyloggers
+- Data breaches and leaks
+- Skimming and cloning
+
+#### 3.3 Financial Frauds
+
+- Credit card fraud
+- Insurance fraud
+- Investment and securities fraud
+- Online banking fraud
+- Account takeover
+- False invoicing and billing schemes
+- Impact of identity theft and financial fraud
+
+**Case studies based on identity theft and financial fraud.**
+
+
+### Unit 4: Cyber Law and Investigation (20%, 10 Sessions)
+
+1. Cyber Law
+2. IT Act 2000
+3. National and international laws on cyber crime
+4. Ethical considerations in cyber security
+5. Privacy issues and data protection laws
+6. Laws and Ethics in Information Security
+7. Codes of Ethics
+8. Legal perspectives:
+    - Indian perspective
+    - Global perspective
+9. Legal provisions against hacking, fraud and other cyber crimes
+10. Intellectual Property Rights (IPR) and digital content
+11. Copyright, trademark and patent laws in the digital environment
+12. Legal issues in software piracy and online content distribution
+    
+    
+    
+    ### Unit 5: Information Security Policy and Standards (20%, 8 Sessions)
+
+1. Information Security
+2. Security principles and types of information security policies:
+    - Administrative policies
+    - Technical policies
+3. Security Framework:
+    - Security policy infrastructure
+    - Policy design life cycle
+    - Design processes
+    - PDCA Model
+4. Security policy standards and practices:
+    - BS7799
+    - ISO/IEC 17799
+    - ISO 27001
+5. Auditing Tools:
+    - ISO 27001 ISMS Tool Kit
+    - NGS Auditor
+    - Windows Password Auditor
+    - ISO/IEC 27002:2005 IS Audit Tool
